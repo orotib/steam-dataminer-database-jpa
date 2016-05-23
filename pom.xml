@@ -19,8 +19,8 @@
 		<name>Faculty of Informatics, University of Debrecen</name>
 	</organization>
 	<scm>
-		<connection>scm:https://github.com/orotib/steam-market-database.git</connection>
-		<url>https://github.com/orotib/steam-market-database.git</url>
+		<connection>scm:https://github.com/orotib/steam-dataminer-database-jpa.git</connection>
+		<url>https://github.com/orotib/steam-dataminer-database-jpa.git</url>
 	</scm>
 	<licenses>
 		<license>
@@ -109,8 +109,10 @@
 			</releases>
 		</pluginRepository>
 	</pluginRepositories>
+
 	<build>
 		<plugins>
+
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -138,6 +140,12 @@
 
 	<reporting>
 		<plugins>
+			<plugin>
+				<artifactId>maven-project-info-reports-plugin</artifactId>
+				<configuration>
+					<dependencyLocationsEnabled>false</dependencyLocationsEnabled>
+				</configuration>
+			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-site-plugin</artifactId>
