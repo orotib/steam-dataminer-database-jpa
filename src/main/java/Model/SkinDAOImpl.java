@@ -8,13 +8,14 @@ import javax.persistence.EntityManager;
 
 public class SkinDAOImpl implements SkinDAO {
 
-	EntityManager em;
+	public EntityManager em;
 	public List<Skin> searchedSkin;
 
 	public SkinDAOImpl(EntityManager entityM) {
 		this.em = entityM;
 		searchedSkin = new ArrayList<Skin>();
 	}
+	
 
 	public List<Skin> getSkins() {
 		searchedSkin = em.createQuery("select s from " + Skin.class.getName() + " s", Skin.class).getResultList();

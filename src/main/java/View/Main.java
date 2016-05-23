@@ -1,6 +1,7 @@
 package View;
 
 import Controller.ViewController;
+import Model.SkinDAOImpl;
 import javafx.application.Application;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
@@ -36,6 +37,7 @@ public class Main extends Application {
 
 	private void closeEvent(WindowEvent event) {
 		ViewController.close();
+		System.exit(0);
 	}
 
 }

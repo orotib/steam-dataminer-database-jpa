@@ -16,6 +16,7 @@ import org.apache.commons.lang3.math.NumberUtils;
 
 import Model.Condition;
 import Model.Skin;
+import Model.SkinDAO;
 import Model.SkinDAOImpl;
 import Model.Type;
 import javafx.event.ActionEvent;
@@ -127,6 +128,10 @@ public class ViewController implements Initializable {
 	Button buttonUpdate;
 	@FXML
 	Button buttonInitialize;
+	@FXML
+	Button buttonAllLink;
+	@FXML
+	Button buttonAllSkin;
 
 	static EntityManagerFactory emf;
 	static EntityManager em;
@@ -139,7 +144,7 @@ public class ViewController implements Initializable {
 		this.DAO = new SkinDAOImpl(em);
 
 		handleInitializeButton(null);
-		
+
 		textFieldCollection.setText("Chroma 3 Case");
 		comboBoxType.getItems().addAll("Normal", "StatTrak", "Souvenir");
 		comboBoxType.setValue("Normal");
@@ -449,8 +454,22 @@ public class ViewController implements Initializable {
 		}
 	}
 
+	@FXML
+	public void handleGetAllLinkButton(ActionEvent event) {
+		DecimalFormat f = new DecimalFormat("0.00");
+
+		for (Skin s : DAO.getSkins())
+			System.out.printf("%s;%s\n", f.format(s.getAvgPrice()).replace(",", "."), DAO.getSkinLink(s));
+	}
+
+	@FXML
+	public void handleGetAllSkinButton(ActionEvent event) {
+		int itemcount = 1;
+		for (Skin s : DAO.getSkins())
+			logger.info("{}. {}", itemcount++, s);
+	}
+
 	public static void close() {
 		em.close();
-		emf.close();
 	}
 }
