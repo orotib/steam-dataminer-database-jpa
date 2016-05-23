@@ -5,15 +5,11 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class SkinDAOImpl implements SkinDAO {
 
 	EntityManager em;
 	public List<Skin> searchedSkin;
-	// private static Logger logger =
-	// LoggerFactory.getLogger(SkinDAOImpl.class);
 
 	public SkinDAOImpl(EntityManager entityM) {
 		this.em = entityM;

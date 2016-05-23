@@ -6,7 +6,6 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.net.URL;
 import java.text.DecimalFormat;
-import java.util.List;
 import java.util.ResourceBundle;
 
 import javax.persistence.EntityManager;
