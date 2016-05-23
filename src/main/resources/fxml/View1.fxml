@@ -127,10 +127,10 @@
 			<content>
 				<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
 					<children>
-						<Button fx:id="buttonList" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#handleGetLinkButton" text="GetSearchedSkin" />
-						<Button fx:id="buttonListSkin" layoutX="10.0" layoutY="50.0" mnemonicParsing="false" onAction="#handleListButton" text="GetSearchLink" />
-                  <Button fx:id="buttonAllLink" layoutX="10.0" layoutY="130.0" mnemonicParsing="false" onAction="#handleGetAllLinkButton" text="GetAllLink" />
-                  <Button fx:id="buttonAllSkin" layoutX="10.0" layoutY="90.0" mnemonicParsing="false" onAction="#handleGetAllSkinButton" text="GetAllSkin" />
+						<Button fx:id="buttonList" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#handleGetLinkButton" text="Get Searched Link" />
+						<Button fx:id="buttonListSkin" layoutX="10.0" layoutY="50.0" mnemonicParsing="false" onAction="#handleListButton" text="Get Searched Skin" />
+                  <Button fx:id="buttonAllLink" layoutX="10.0" layoutY="130.0" mnemonicParsing="false" onAction="#handleGetAllLinkButton" text="Get All Link" />
+                  <Button fx:id="buttonAllSkin" layoutX="10.0" layoutY="90.0" mnemonicParsing="false" onAction="#handleGetAllSkinButton" text="Get All Skin" />
 					</children>
 				</AnchorPane>
 			</content>
