@@ -31,8 +31,6 @@ public class SkinDAOImpl implements SkinDAO {
 			em.persist(skin);
 			em.getTransaction().commit();
 		} catch (Exception e) {
-			if (em.getTransaction().isActive())
-				em.getTransaction().rollback();
 			return false;
 		}
 		return true;
@@ -58,8 +56,6 @@ public class SkinDAOImpl implements SkinDAO {
 			em.createQuery(q.toString()).executeUpdate();
 			em.getTransaction().commit();
 		} catch (Exception e) {
-			if (em.getTransaction().isActive())
-				em.getTransaction().rollback();
 			return false;
 		}
 
@@ -72,8 +68,6 @@ public class SkinDAOImpl implements SkinDAO {
 			em.createQuery("delete from " + Skin.class.getName() + command).executeUpdate();
 			em.getTransaction().commit();
 		} catch (Exception e) {
-			if (em.getTransaction().isActive())
-				em.getTransaction().rollback();
 			return false;
 		}
 		return true;
@@ -85,8 +79,6 @@ public class SkinDAOImpl implements SkinDAO {
 			em.createQuery("delete from " + Skin.class.getName()).executeUpdate();
 			em.getTransaction().commit();
 		} catch (Exception e) {
-			if (em.getTransaction().isActive())
-				em.getTransaction().rollback();
 			return false;
 		}
 		return true;

@@ -139,6 +139,8 @@ public class ViewController implements Initializable {
 		this.em = emf.createEntityManager();
 		this.DAO = new SkinDAOImpl(em);
 
+		handleInitializeButton(null);
+		
 		textFieldCollection.setText("Chroma 3 Case");
 		comboBoxType.getItems().addAll("Normal", "StatTrak", "Souvenir");
 		comboBoxType.setValue("Normal");
@@ -299,9 +301,9 @@ public class ViewController implements Initializable {
 			q.append("price BETWEEN ").append(min).append(" AND ").append(max);
 		}
 
-		List<Skin> searchedSkin = DAO.findSkin(q.toString());
-		if (searchedSkin != null)
-			logger.info("Found skin(s): {}", searchedSkin.size());
+		DAO.findSkin(q.toString());
+		if (DAO.searchedSkin != null)
+			logger.info("Found skin(s): {}", DAO.searchedSkin.size());
 		else
 			logger.info("Nothing found!");
 	}
